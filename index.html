@@ -91,9 +91,9 @@
       align-items: start;
     }
 
-    textarea {
-      font-size: 1.2em;
-      padding: 16px;
+    textarea, input[type="text"] {
+      font-size: 1.1em;
+      padding: 12px;
       border-radius: 8px;
       border: 1px solid var(--border);
       width: 100%;
@@ -102,8 +102,8 @@
 
     #spaningsfraga {
       font-size: 1.2em;
-      padding: 32px;
-      min-height: 200px;
+      padding: 24px;
+      min-height: 160px;
       background: #f5fff7;
       border-color: #cfe6d5;
     }
@@ -167,75 +167,21 @@
         </div>
       </fieldset>
 
-      <!-- 1. Stund -->
-      <fieldset>
-        <legend>1. 🕒 Stund</legend>
-        <small>Tidpunkt – När observationen gjordes</small>
-        <div class="row">
-          <textarea id="stund" placeholder="Ex: 121500Z"></textarea>
-          <button type="button" onclick="startVoiceForField('stund')">🎤</button>
-        </div>
-      </fieldset>
+      <!-- Originala 7S -->
+      <fieldset><legend>1. 🕒 Stund</legend><small>Tidpunkt</small><div class="row"><textarea id="stund"></textarea><button type="button" onclick="startVoiceForField('stund')">🎤</button></div></fieldset>
+      <fieldset><legend>2. 📍 Ställe</legend><small>Plats</small><div class="row"><textarea id="stalle"></textarea><button type="button" onclick="startVoiceForField('stalle')">🎤</button></div></fieldset>
+      <fieldset><legend>3. 👥 Styrka</legend><small>Antal</small><div class="row"><textarea id="styrka"></textarea><button type="button" onclick="startVoiceForField('styrka')">🎤</button></div></fieldset>
+      <fieldset><legend>4. 🚛 Slag</legend><small>Typ</small><div class="row"><textarea id="slag"></textarea><button type="button" onclick="startVoiceForField('slag')">🎤</button></div></fieldset>
+      <fieldset><legend>5. ⚙️ Sysselsättning</legend><small>Aktivitet</small><div class="row"><textarea id="sysselsattning"></textarea><button type="button" onclick="startVoiceForField('sysselsattning')">🎤</button></div></fieldset>
+      <fieldset><legend>6. 🏷️ Symbol</legend><small>Märkning</small><div class="row"><textarea id="symbol"></textarea><button type="button" onclick="startVoiceForField('symbol')">🎤</button></div></fieldset>
+      <fieldset><legend>7. 🧑‍✈️ Sagesman</legend><small>Vem</small><div class="row"><textarea id="sagesman"></textarea><button type="button" onclick="startVoiceForField('sagesman')">🎤</button></div></fieldset>
 
-      <!-- 2. Ställe -->
-      <fieldset>
-        <legend>2. 📍 Ställe</legend>
-        <small>Plats – Var observationen gjordes</small>
-        <div class="row">
-          <textarea id="stalle" placeholder="Ex: MGRS 33V XH 1234 5678"></textarea>
-          <button type="button" onclick="startVoiceForField('stalle')">🎤</button>
-        </div>
-      </fieldset>
-
-      <!-- 3. Styrka -->
-      <fieldset>
-        <legend>3. 👥 Styrka</legend>
-        <small>Antal – Hur många som observerades</small>
-        <div class="row">
-          <textarea id="styrka" placeholder="Ex: 2 fordon, 6 personer"></textarea>
-          <button type="button" onclick="startVoiceForField('styrka')">🎤</button>
-        </div>
-      </fieldset>
-
-      <!-- 4. Slag -->
-      <fieldset>
-        <legend>4. 🚛 Slag</legend>
-        <small>Typ – Modell av fordon, truppslag eller händelsetyp</small>
-        <div class="row">
-          <textarea id="slag" placeholder="Ex: pansarterrängbil, infanteri"></textarea>
-          <button type="button" onclick="startVoiceForField('slag')">🎤</button>
-        </div>
-      </fieldset>
-
-      <!-- 5. Sysselsättning -->
-      <fieldset>
-        <legend>5. ⚙️ Sysselsättning</legend>
-        <small>Aktivitet – Vad de gjorde</small>
-        <div class="row">
-          <textarea id="sysselsattning" placeholder="Ex: lastar materiel"></textarea>
-          <button type="button" onclick="startVoiceForField('sysselsattning')">🎤</button>
-        </div>
-      </fieldset>
-
-      <!-- 6. Symbol -->
-      <fieldset>
-        <legend>6. 🏷️ Symbol</legend>
-        <small>Märkning – Nummer, färg, emblem</small>
-        <div class="row">
-          <textarea id="symbol" placeholder="Ex: blå markering"></textarea>
-          <button type="button" onclick="startVoiceForField('symbol')">🎤</button>
-        </div>
-      </fieldset>
-
-      <!-- 7. Sagesman -->
-      <fieldset>
-        <legend>7. 🧑‍✈️ Sagesman</legend>
-        <small>Vem – Vem som gjort iakttagelsen</small>
-        <div class="row">
-          <textarea id="sagesman" placeholder="Ex: RPAS operatör Alfa"></textarea>
-          <button type="button" onclick="startVoiceForField('sagesman')">🎤</button>
-        </div>
-      </fieldset>
+      <!-- Extra fält för RPAS -->
+      <fieldset><legend>📡 Höjd</legend><small>Ange flyghöjd (m AGL)</small><input type="text" id="hojd" placeholder="Ex: 120 m" /></fieldset>
+      <fieldset><legend>🌤 Väder</legend><small>Ex: Vind, temp, molnighet</small><textarea id="vader" placeholder="Ex: Vind 5 m/s, temp 10°C"></textarea></fieldset>
+      <fieldset><legend>👁 Sikt</legend><small>Visuell/IR</small><input type="text" id="sikt" placeholder="Ex: god, IR begränsad" /></fieldset>
+      <fieldset><legend>🎥 Sensorläge</legend><small>EO, IR, Termisk</small><input type="text" id="sensorlage" placeholder="Ex: EO + IR" /></fieldset>
+      <fieldset><legend>🔍 Sensorprestanda</legend><small>Zoom, upplösning</small><input type="text" id="sensorprestanda" placeholder="Ex: Zoom x10, termisk OK" /></fieldset>
 
       <!-- Bilaga -->
       <fieldset>
@@ -293,6 +239,11 @@
         sysselsattning: document.getElementById("sysselsattning").value.trim(),
         symbol: document.getElementById("symbol").value.trim(),
         sagesman: document.getElementById("sagesman").value.trim(),
+        hojd: document.getElementById("hojd").value.trim(),
+        vader: document.getElementById("vader").value.trim(),
+        sikt: document.getElementById("sikt").value.trim(),
+        sensorlage: document.getElementById("sensorlage").value.trim(),
+        sensorprestanda: document.getElementById("sensorprestanda").value.trim(),
         timestamp: new Date().toISOString(),
         bilaga: document.getElementById("bilaga").files.length > 0 ? document.getElementById("bilaga").files[0].name : "Ingen"
       };
@@ -312,6 +263,12 @@
 ⚙️ Aktivitet: ${rapport.sysselsattning}
 🏷️ Märkning: ${rapport.symbol}
 🧑‍✈️ Sagesman: ${rapport.sagesman}
+
+📡 Höjd: ${rapport.hojd}
+🌤 Väder: ${rapport.vader}
+👁 Sikt: ${rapport.sikt}
+🎥 Sensorläge: ${rapport.sensorlage}
+🔍 Sensorprestanda: ${rapport.sensorprestanda}
 
 🎯 Spaningsfråga:
 ${rapport.spaningsfraga}
@@ -394,6 +351,11 @@ ${rapport.spaningsfraga}
       line("Aktivitet", rapport.sysselsattning);
       line("Märkning", rapport.symbol);
       line("Sagesman", rapport.sagesman);
+      line("Höjd", rapport.hojd);
+      line("Väder", rapport.vader);
+      line("Sikt", rapport.sikt);
+      line("Sensorläge", rapport.sensorlage);
+      line("Sensorprestanda", rapport.sensorprestanda);
       doc.text("Spaningsfråga:", 10, y + 4);
       doc.text(rapport.spaningsfraga || "-", 10, y + 12, { maxWidth: 190 });
       y += 28;
