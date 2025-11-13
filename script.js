@@ -111,6 +111,18 @@ function exportPDF(rapport) {
     doc.save(`${rapport.id}.pdf`);
   }
 }
+function openMGRS() {
+  const input = document.getElementById("mgrs").value.trim();
+  if (!input) return alert("Skriv in en MGRS-koordinat!");
+
+  try {
+    const [lon, lat] = mgrs.toPoint(input); // [long, lat]
+    const url = `https://www.google.com/maps?q=${lat},${lon}`;
+    window.open(url, "_blank");
+  } catch (e) {
+    alert("Ogiltig MGRS-koordinat. Exempel: 33V XH 12345 67890");
+  }
+}
 
 // Formatera rapporttext för delning
 function formatReportText(rapport) {
