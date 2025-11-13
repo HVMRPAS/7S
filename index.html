@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>7S-RAPPORT MRPAS</title>
+<script src="https://unpkg.com/mgrs@1.0.0/mgrs.js"></script>
 
   <!-- jsPDF för PDF-export -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -182,6 +183,11 @@
       <fieldset><legend>👁 Sikt</legend><small>Visuell/IR</small><input type="text" id="sikt" placeholder="Ex: god, IR begränsad" /></fieldset>
       <fieldset><legend>🎥 Sensorläge</legend><small>EO, IR, Termisk</small><input type="text" id="sensorlage" placeholder="Ex: EO + IR" /></fieldset>
       <fieldset><legend>🔍 Sensorprestanda</legend><small>Zoom, upplösning</small><input type="text" id="sensorprestanda" placeholder="Ex: Zoom x10, termisk OK" /></fieldset>
+<fieldset>
+  <legend>📍 Plats av intresse (MGRS)</legend>
+  <input type="text" id="mgrs" placeholder="Ex: 33V XH 12345 67890" />
+  <button onclick="openMGRS()">Öppna i Google Maps</button>
+</fieldset>
 
       <!-- Bilaga -->
       <fieldset>
